@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<!--CSS Style Sheet-->
+<link rel="stylesheet" type="text/css" href="MainCss.css">
+
+<head>
+    <!--Meta Data-->
+    <meta charset="UTF-8">
+    <meta name="description" content="The official site for KC High Football League">
+    <meta name="keywords" content="KC High,KCHigh,KCFL,KC Football,KC Football League">
+    <meta name="author" content="A Akil Adithya, Devanathan and Omar Faris">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Custom google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+
+    <!--Custom Google title and favicon-->
+    <title>KCFL Home</title>
+    <link rel="icon" type="image/png" href="ImagesArchive/KC_FL_Logo.jpg">
+
+</head>
+<body>
+    <!--MENU-->
+    <div id="menubar-wrapper">
+    <nav id="menubar">
+        <img src="ImagesArchive/logoMenubar.png" alt="Logo" class="logo">
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Meet the Squads</a></li>
+            <li><a href="#">History</a></li>
+            <li><a href="#">About us</a></li>
+        </ul>
+    </nav>
+    </div>
+
+    <div class="banner">
+    <div class="banner-container">
+        <img id="banner-img" src="ImagesArchive/Website Banner.png" alt="Website Banner">
+        <div class="banner-text">
+            KC FOOTBALL LEAGUE
+        </div>
+    </div>
+    </div>
+
+    <!--Scripting for banner-->
+    <script>
+        const images = [
+            "ImagesArchive/Website Banner.png",
+            "ImagesArchive/Website Banner1.png",
+            "ImagesArchive/Website Banner2.png"
+        ];
+
+        let index = 0;
+        const bannerImg = document.getElementById("banner-img");
+
+        setInterval(() => {
+            index = (index + 1) % images.length;
+            bannerImg.src = images[index];
+        }, 3000); // changes every 3 seconds
+    </script>
+    <!-- Countdown Box -->
+<div class="countdown-box">
+    <div class="overlay">
+        <div id="countdown" class="fade"></div>
+        <div class="countdown-text">
+            <p>This is the countdown timer between matches. Here we will show the match and who will play it</p>
+            <p>Until an actual time is set for the matches, please wait patiently. (the timer is bogus as of right now)</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Change this date/time to the NEXT match
+    const nextMatchDate = new Date("2025-10-06T17:30:00").getTime(); // year-month-day-hr-min-sec
+    const countdownEl = document.getElementById("countdown");
+
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = nextMatchDate - now;
+
+        if (distance < 0) {
+            if (Math.abs(distance) > (1000 * 60 * 60 * 3)) {
+                countdownEl.innerHTML = "Match Over!";
+            } else {
+                countdownEl.innerHTML = "Match Started!";
+            }
+            return;
+        }
+
+        const weeks = Math.floor(distance / (1000 * 60 * 60 * 24 * 7));
+        const days = Math.floor((distance % (1000 * 60 * 60 * 24 * 7)) / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        countdownEl.classList.remove("fade");
+        void countdownEl.offsetWidth; // re-trigger animation
+        countdownEl.classList.add("fade");
+
+        countdownEl.innerHTML = `${weeks}w ${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    // Call immediately so it doesn't wait 1 second
+    updateCountdown();
+    // Update every second
+    setInterval(updateCountdown, 1000);
+</script>
+    <div class="card-container">
+        <!-- Card 1 -->
+        <div class="card">
+            <img src="ImagesArchive/avatar.png" alt="Player of the Week" height="400px">
+            <div class="container">
+            <h4><b>Player of the Week</b></h4>
+            <p>Insert Name and Grade here.</p>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+            <img src="ImagesArchive/avatar.png" alt="Best Goal" height="400px">
+            <div class="container">
+            <h4><b>Best Goal</b></h4>
+            <p>Insert match, opponents, scorer and time here.</p>
+            </div>
+        </div>
+
+        <!-- Card 3 (wider) -->
+        <div class="card wide-card">
+            <img src="ImagesArchive/avatar.png" alt="Highlights" height="400px">
+            <div class="container">
+            <h4><b>Highlights</b></h4>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <!-- Stats Board -->
+<section class="stats-board">
+    <div class="stat">
+        <div class="stat-number">5</div>
+        <div class="stat-label">Teams</div>
+    </div>
+    <div class="stat">
+        <div class="stat-number">40</div>
+        <div class="stat-label">Players</div>
+    </div>
+    <div class="stat">
+        <div class="stat-number">16</div>
+        <div class="stat-label">Minutes per match</div>
+    </div>
+    <div class="stat">
+        <div class="stat-number">4</div>
+        <div class="stat-label">Season</div>
+    </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer>
+    <div class="footer-container">
+        <div class="footer-logo">
+            <img src="ImagesArchive/KC_FL_Logo.jpg" alt="KCFL Logo">
+            <div class="footer-logo-text">
+                <p>KC Football League - Season 4</p>
+                <p>"Just shoot"</p>
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <div><a href="#">Home</a></div>
+            <div><a href="#">Meet the Squads</a></div>
+            <div><a href="#">History</a></div>
+            <div><a href="#">About Us</a></div>
+        </div>
+
+        <div class="social-links">
+            <div class="flex">
+                <a href="https://www.instagram.com/kcfootballleague/" target="_blank">
+                    <img src="ImagesArchive/Instagram.png" alt="Instagram">
+                </a>
+                <span>Instagram</span>
+            </div>
+            <div class="flex">
+                <a href="mailto:kcfl@kchigh.com">
+                    <img src="ImagesArchive/Mail.png" alt="Email">
+                </a>
+                <span>Email</span>
+            </div>
+            <div class="flex">
+                <a href="https://wa.me/918056201753" target="_blank">
+                    <img src="ImagesArchive/Whatsapp.png" alt="WhatsApp">
+                </a>
+                <span>WhatsApp</span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
