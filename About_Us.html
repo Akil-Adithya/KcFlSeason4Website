@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<!--CSS Style Sheet-->
+<link rel="stylesheet" type="text/css" href="About_Us.css">
+
+<head>
+    <!--Meta Data-->
+    <meta charset="UTF-8">
+    <meta name="description" content="The official site for KC High Football League">
+    <meta name="keywords" content="KC High,KCHigh,KCFL,KC Football,KC Football League">
+    <meta name="author" content="A Akil Adithya, Devanathan and Omar Faris">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Custom google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+
+    <!--Custom Google title and favicon-->
+    <title>About us</title>
+    <link rel="icon" type="image/png" href="ImagesArchive/KC_FL_Logo.jpg">
+
+</head>
+<body>
+    <!--MENU-->
+    <div id="menubar-wrapper">
+        <nav id="menubar">
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1">
+                <img src="ImagesArchive/logoMenubar.png" alt="Logo" class="logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="MeetTheTeam.html">Meet the Squads</a></li>
+                <li><a href="History.html">History</a></li>
+                <li><a href="About_Us.html">About us</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <br><br>
+
+    <section class="about-us">
+        <div class="member">
+            <div class="member-img">
+                <img src="ImagesArchive/Clutchmar.jpeg" alt="Member 1">
+            </div>
+            <div class="member-info">
+                <h2>Omar Faris</h2>
+                <p>Grade XI<br>Project lead</p>
+                <p class="team">Team: Undetermined</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/clutchmar/" target="_blank">
+                        <img src="ImagesArchive/Instagram.png" alt="Instagram">
+                    </a>
+                    <a href="mailto:omar@kchigh.com">
+                        <img src="ImagesArchive/Mail.png" alt="Email">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="member reverse">
+            <div class="member-img">
+                <img src="ImagesArchive/DevySwamy.png" alt="Member 2">
+            </div>
+            <div class="member-info">
+                <h2>Devanathan NV Acharya</h2>
+                <p>Grade XI<br>Lead Video Editor</p>
+                <p class="team">Team: Undetermined</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/imafemalenocap/" target="_blank">
+                        <img src="ImagesArchive/Instagram.png" alt="Instagram">
+                    </a>
+                    <a href="mailto:devanathan@kchigh.com">
+                        <img src="ImagesArchive/Mail.png" alt="Email">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="member">
+            <div class="member-img">
+                <img src="ImagesArchive/Yagil.png" alt="Akil Adithya">
+            </div>
+            <div class="member-info">
+                <h2>Akil Adithya</h2>
+                <p>Grade XI<br>Primary developer and coder of KC FL Season 4 Website.</p>
+                <p class="team">Team: Undetermined</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/redsparrowdagreat/" target="_blank">
+                        <img src="ImagesArchive/Instagram.png" alt="Instagram">
+                    </a>
+                    <a href="mailto:akil@kchigh.com">
+                        <img src="ImagesArchive/Mail.png" alt="Email">
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="member reverse">
+            <div class="member-img">
+                <img src="ImagesArchive/Sir Tea the First.jpeg" alt="Member 4">
+            </div>
+            <div class="member-info">
+                <h2>Tea</h2>
+                <p>Infinitely old and wise<br>Emotional Support</p>
+                <p class="team">Team: Supreme Overseers</p>
+                <div class="social-links">
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1" target="_blank">
+                        <img src="ImagesArchive/Instagram.png" alt="Instagram">
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1">
+                        <img src="ImagesArchive/Mail.png" alt="Email">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Optional JS: Animate in members on scroll
+        document.addEventListener("DOMContentLoaded", () => {
+            const members = document.querySelectorAll(".member");
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            members.forEach(member => observer.observe(member));
+        });
+    </script>
+
+    <br><br>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="ImagesArchive/KC_FL_Logo.jpg" alt="KCFL Logo">
+                <div class="footer-logo-text">
+                    <p>KC Football League - Season 4</p>
+                    <p>"Just shoot"</p>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <div><a href="index.html">Home</a></div>
+                <div><a href="MeetTheTeam.html">Meet the Squads</a></div>
+                <div><a href="History.html">History</a></div>
+                <div><a href="About_Us.html">About Us</a></div>
+            </div>
+
+            <div class="social-links">
+                <div class="flex">
+                    <a href="https://www.instagram.com/kcfootballleague/" target="_blank">
+                        <img src="ImagesArchive/Instagram.png" alt="Instagram">
+                    </a>
+                    <span>Instagram</span>
+                </div>
+                <div class="flex">
+                    <a href="mailto:kcfl@kchigh.com">
+                        <img src="ImagesArchive/Mail.png" alt="Email">
+                    </a>
+                    <span>Email</span>
+                </div>
+                <div class="flex">
+                    <a href="https://wa.me/918056201753" target="_blank">
+                        <img src="ImagesArchive/Whatsapp.png" alt="WhatsApp">
+                    </a>
+                    <span>WhatsApp</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
